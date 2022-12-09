@@ -1,0 +1,28 @@
+package com.questions;
+
+public class SwapNumber {
+	
+	static void swap(int a, int b) {
+		
+		System.out.println("Original values before swap");
+		System.out.println("a "+a );
+		System.out.println("b "+b );
+		
+		a = b;
+		b = a;
+		
+		System.out.println("values after swap");
+		System.out.println("a "+a );
+		System.out.println("b "+b );
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		int a = 3;
+		int b = 9;	
+		swap(a, b);
+		
+	}
+
+}

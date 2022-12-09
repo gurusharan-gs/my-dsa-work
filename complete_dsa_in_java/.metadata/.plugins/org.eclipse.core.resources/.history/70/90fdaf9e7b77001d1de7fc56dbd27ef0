@@ -1,0 +1,25 @@
+package com.questions;
+
+public class ReversesArray {
+	
+	static int[] reverse(int[] arr) { 
+		
+		int n = arr.length;
+		int j = 0;
+		for(int i=n-1; i>=0; i--) {
+			arr[j++] = arr[i];
+		}
+		return arr;
+		
+		
+	}
+	
+	public static void main(String[] args) {
+		
+		int[] arr = {1,2,3,4,5};
+		int[] res = reverse(arr);
+		System.out.println(res);
+		
+	}
+
+}
