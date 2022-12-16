@@ -1,4 +1,4 @@
-package com.twopointer;
+package com.twopointerLNo_21;
 
 import java.util.Arrays;
 
