@@ -6,6 +6,7 @@ public class SprialRotata {
 
 		int topRow = 0, bottomRow = r - 1, leftCol = 0, rightCol = c - 1;
 		int totalCount = 0;
+		
 		while (totalCount < r * c) {
 
 			// topRow -> leftCol to rightCol
