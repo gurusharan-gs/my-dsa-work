@@ -30,6 +30,9 @@ public class Bubble {
 		int[] arr = { 5, 4, 2, 3, 1 };
 		bubble(arr);
 		System.out.println(Arrays.toString(arr));
+		
+//		time complexity O(n2)
+//		spce complexity O(1)
 
 	}
 
