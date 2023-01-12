@@ -52,6 +52,7 @@ public class ArrayListP1 {
 		str.add("sanjan");
 		str.add("chetan");
 		str.add("himansh");
+		str.add("sagar");
 
 		Collections.sort(str);
 		System.out.println(str);
