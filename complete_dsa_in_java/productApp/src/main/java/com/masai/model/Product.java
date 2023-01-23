@@ -1,6 +1,5 @@
 package com.masai.model;
 
-import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -11,16 +10,17 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Student {
+@Data
+public class Product {
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private Integer id;
-	private String name;
-	private Integer marks;
+	private Integer productId;
+	private String productName;
+	private Double rating;
+	private Integer price;
+	private String url;
 	
-	@Embedded
-	private Address addr;
 }

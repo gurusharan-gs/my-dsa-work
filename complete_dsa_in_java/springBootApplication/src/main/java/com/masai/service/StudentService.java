@@ -12,5 +12,11 @@ public interface StudentService {
 	public Student deleteStudentdb(Integer id)throws StudentException;
 	
 	public List<Student> getAllStudentDetailsdb()throws StudentException;
+	
+	public Student getStudentById(Integer id)throws StudentException;
+	
+	public Student updateStudent(Student student)throws StudentException;
+	
+	public Student getfindByName(String name);
    
 }
