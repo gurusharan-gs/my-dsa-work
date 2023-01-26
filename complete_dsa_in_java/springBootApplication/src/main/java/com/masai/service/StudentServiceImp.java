@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.masai.exception.StudentException;
 import com.masai.model.Student;
+import com.masai.model.StudentDTO;
 import com.masai.repository.StudentDao;
 
 @Service
@@ -74,11 +75,51 @@ public class StudentServiceImp implements StudentService {
 	public Student getfindByName(String name) {
 
 		Student student = studentDao.findByName(name);
-		if(student == null) {
+		if (student == null) {
 			throw new StudentException("not found name");
-		}else {
+		} else {
 			return student;
 		}
 	}
+
+	@Override
+	public List<Student> getStudentNameByMarks(Integer marks) {
+
+		List<Student> std = studentDao.findByMarks(marks);
+
+		if (std.isEmpty()) {
+			throw new StudentException("student not found with this marks :" + marks);
+		} else {
+			return std;
+		}
+
+	}
+
+	@Override
+	public String getStudentNameById(Integer id) {
+
+		String str = studentDao.getStudentNameById(id);
+		if (str == null) {
+
+			throw new StudentException("student not found with this id :"+id);
+		}
+		return str;
+	}
+
+	@Override
+	public StudentDTO getStudentNameById2(Integer id) {
+		
+		StudentDTO stddto = studentDao.getStudentNameById2(id);
+		
+		if(stddto == null) {
+			throw new StudentException("student not found with this id :"+id);
+		}else {
+			return stddto;
+		}
+	}
+
+
+
+
 
 }

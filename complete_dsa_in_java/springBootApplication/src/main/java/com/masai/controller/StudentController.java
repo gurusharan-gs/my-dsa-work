@@ -2,6 +2,7 @@ package com.masai.controller;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.masai.model.StudentDTO;
 import com.masai.model.Student;
 import com.masai.service.StudentService;
 
@@ -60,4 +62,25 @@ public class StudentController {
 		Student std = studentService.getfindByName(name);
 		return new ResponseEntity<Student>(std, HttpStatus.OK);
 	}
+	
+	
+	@GetMapping("/student/getmarks/{marks}")
+	public ResponseEntity<List<Student>> findByMarksH(@PathVariable("marks") Integer marks) {
+		List<Student> std = studentService.getStudentNameByMarks(marks);
+		return new ResponseEntity<List<Student>>(std, HttpStatus.OK);
+	}
+	
+	@GetMapping("/student/getId/{id}")
+	public ResponseEntity<String> getStudentNameByIdH(@PathVariable("id") Integer id) {
+		String std = studentService.getStudentNameById(id);
+		return new ResponseEntity<String>(std, HttpStatus.OK);
+	}
+	
+	@GetMapping("/student/getDtoId/{id}")
+	public ResponseEntity<StudentDTO> getStudentNameById2H(@PathVariable("id") Integer id) {
+		StudentDTO std = studentService.getStudentNameById2(id);
+		return new ResponseEntity<StudentDTO>(std, HttpStatus.OK);
+	}
+	
+
 }
