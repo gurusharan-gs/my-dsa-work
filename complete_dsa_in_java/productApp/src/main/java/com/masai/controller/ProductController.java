@@ -24,9 +24,9 @@ public class ProductController {
 	@Autowired
 	private ProductService pService;
 	
-	@PostMapping("/product")
-	public ResponseEntity<Product> addProductHandel(@RequestBody Product product) {
-		Product addPrd =  pService.addProduct(product);
+	@PostMapping("/product/{categoryId}")
+	public ResponseEntity<Product> addProductHandel(@RequestBody Product product, @PathVariable("categoryId") Integer categoryId) {
+		Product addPrd =  pService.addProduct(product, categoryId);
 		return new ResponseEntity<Product>(addPrd, HttpStatus.CREATED);
 	}
 	

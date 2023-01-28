@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>product</title>
+     <link rel="stylesheet" href="/index.css">
+</head>
+
+<body>
+     <h1>Spring Boot Product Application</h1>
+
+     <div class="main">
+
+     <div class="product">
+          <form>
+               <input type="text" id="name" placeholder="Product Name"><br>
+               <input type="text" id="price" placeholder="Price"><br>
+               <input type="text" id="rating" placeholder="Rating"><br>
+               <input type="text" id="url" placeholder="URL"><br>
+
+          </form>
+          <button onclick="addProduct()">Add Product</button>
+     </div>
+
+     <div class="product">
+          <input type="text" id="prdId1" placeholder="ProductId"><br>
+          <input type="text" id="name1" placeholder="Name"><br>
+          <input type="text" id="price1" placeholder="Price"><br>
+          <input type="text" id="rating1" placeholder="Rating"><br>
+          <input type="text" id="url1" placeholder="URL"><br>
+
+          <button onclick="updateProduct()">Update Product</button>
+     </div>
+
+     <div class="product">
+          <input type="text" id="findId" placeholder="Add Id"><br>
+          <button onclick="viewProById()">Get product </button>
+          <input type="text" id="delete" placeholder="Delete For Add Id"><br>
+          <button onclick="deletePro()">Delete Product</button>
+          <button onclick="viewAllPro()">View All Product</button>
+     </div>
+</div>
+
+<div class="line"></div>
+
+<div id="container"></div>
+</body>
+
+</html>
+
+<script src="/index.js"></script>

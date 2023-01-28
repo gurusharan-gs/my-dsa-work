@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Category</title>
+    <style>
+        #right {
+            width: 90%;
+            margin: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        #right>div {
+            width: 17%;
+            padding: 10px;
+            background-color: white;
+            /* height: 150px; */
+            text-align: center;
+            border-radius: 7px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+
+        input {
+            margin-bottom: 10px;
+            width: 100%;
+            border: 1px solid rgb(232, 228, 228);
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            border: 1px solid rgb(232, 228, 228);
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: aliceblue;
+            cursor: pointer;
+        }
+
+        #display {
+            /* height: 500px;
+            width: 500px;
+            border: 1px solid; */
+            padding: 20px;
+            text-align: center;
+        }
+
+
+
+        table {
+            text-align: center;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            padding: 5px;
+        }
+
+        tr {
+            font-size: 12px;
+            padding: 5px;
+        }
+
+        td {
+            padding: 12px;
+        }
+
+        .mid {
+            width: 120px;
+            text-align: left;
+        }
+
+        .proCat {
+            text-align: left;
+        }
+
+        img {
+            max-width: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <div id="right">
+
+            <div>
+                <h4>Category Register</h4>
+                <form>
+                    <input type="text" id="catname" placeholder="Category Name"><br>
+                </form>
+                <button onclick="addCat()">add category</button>
+            </div>
+
+            <div>
+                <h4>View Category by id</h4>
+                <form>
+                    <input type="text" id="catId" placeholder="Category Id"><br>
+                </form>
+                <button onclick="viewCatById()">view</button>
+            </div>
+
+            <div>
+                <h4>View products by Category</h4>
+                <form>
+                    <input type="text" id="catId1" placeholder="Category Id"><br>
+                </form>
+                <button onclick="viewProductByCat()">view</button>
+            </div>
+
+            <div>
+                <h4>Delete Category</h4>
+                <form>
+                    <input type="text" id="catId2" placeholder="Category Id"><br>
+                </form>
+                <button onclick="deleteCat()">delete</button>
+            </div>
+
+            <div>
+                <h4>View all Category</h4>
+                <button onclick="viewAllCat()">view</button>
+            </div>
+
+        </div>
+
+        <!-- right side block end -->
+        <div id="display">
+
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+<script src="/category.js"></script>

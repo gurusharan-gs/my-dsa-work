@@ -1,0 +1,64 @@
+
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+     #container {
+          width: 90%;
+          margin: auto;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+          gap: 20px 0px;
+          margin-top: 20px;
+     }
+
+     #container>div>img {
+          width: 100%;
+          /* height: 300px; */
+     }
+
+     #container>div {
+          /* width: 80%; */
+          /* height: 400px; */
+          margin: 25px;
+          padding: 20px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+     }
+
+     .line{
+          width: 100%;
+          height: 5px;
+          background-color: black;
+     }
+
+     .product{
+          width: 30%;
+     }
+
+
+     .product input{
+       width: 100%;
+       padding: 6px 5px;
+       margin: 5px 0px;
+     }
+
+     button{
+          width: 100%;
+          padding: 6px 0px;
+          font-weight: 600;
+          cursor: pointer;
+          margin-bottom: 30px;
+          background-color:  #008CBA;
+          color: #fff;
+          border: none;
+     }
+
+     .main{
+          width: 90%;
+          margin: auto;
+          display: flex;
+          justify-content: space-around;
+          /* flex-direction: column; */
+     }
+

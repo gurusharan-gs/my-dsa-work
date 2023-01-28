@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Product</title>
+     <link rel="stylesheet" href="style.css">
+     <style>
+          #right {
+               width: 90%;
+               margin: auto;
+               display: flex;
+               justify-content: space-between;
+          }
+
+          #right>div {
+               width: 22%;
+               padding: 10px;
+               background-color: white;
+               /* height: 350px; */
+               text-align: center;
+               border-radius: 7px;
+               box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+          }
+
+          input {
+               margin-bottom: 10px;
+               width: 100%;
+               border: 1px solid rgb(232, 228, 228);
+               padding: 5px;
+               border-radius: 5px;
+          }
+
+          button {
+               width: 100%;
+               border: 1px solid rgb(232, 228, 228);
+               padding: 5px;
+               border-radius: 5px;
+          }
+
+          button:hover {
+               background-color: aliceblue;
+               cursor: pointer;
+          }
+
+          #display {
+               padding: 20px;
+               text-align: center;
+          }
+
+
+
+          table {
+               width: 90%;
+               margin: auto;
+               text-align: center;
+               background-color: white;
+               border-radius: 5px;
+               box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+               padding: 5px;
+          }
+
+          tr {
+               font-size: 25px;
+               padding: 5px;
+          }
+
+          td {
+               padding: 12px;
+          }
+
+          .mid {
+               width: 120px;
+               text-align: left;
+          }
+
+          .proCat {
+               /* width: 90%; */
+               text-align: left;
+               margin-left: 60px;
+               border-bottom: 2px solid gray;
+               width: 125px;
+          }
+
+          img {
+               max-width: 150px;
+          }
+     </style>
+</head>
+
+<body>
+
+     <div class="flex-page">
+          <!-- right side block start -->
+          <div>
+               <div id="right">
+
+                    <div>
+                         <h4>Add Product</h4>
+                         <form>
+                              <input type="text" id="catid" placeholder="category ID"><br>
+
+                              <input type="text" id="name" placeholder="name"><br>
+                              <input type="text" id="price" placeholder="price"><br>
+                              <input type="text" id="quan" placeholder="quantity"><br>
+                              <input type="text" id="url" placeholder="url"><br>
+
+                         </form>
+                         <button onclick="addProduct()">add product</button>
+                    </div>
+
+                    <div>
+                         <h4>Update Product</h4>
+                         <form>
+                              <input type="text" id="proId1" placeholder="Product ID"><br>
+                              <input type="text" id="name1" placeholder="Name"><br>
+                              <input type="text" id="price1" placeholder="Price"><br>
+                              <input type="text" id="quan1" placeholder="Quantity"><br>
+                              <input type="text" id="url1" placeholder="url"><br>
+
+                         </form>
+                         <button onclick="updateProduct()">update product</button>
+                    </div>
+
+                    <div>
+                         <!-- ============== -->
+                         <div>
+                              <h4>View all Products</h4>
+                              <button onclick="viewAllPro()">view</button>
+                         </div>
+
+                         <div>
+                              <h4>Search Product</h4>
+                              <form>
+                                   <input type="text" id="pro" placeholder="Product name"><br>
+                              </form>
+                              <button onclick="viewProByName()">view</button>
+                         </div>
+
+                         <!-- ============== -->
+                    </div>
+
+                    <div>
+                         <!-- =============== -->
+
+
+                         <div>
+                              <h4>View Product</h4>
+                              <form>
+                                   <input type="text" id="proId" placeholder="Product Id"><br>
+                              </form>
+                              <button onclick="viewProById()">view</button>
+                         </div>
+
+                         <div>
+                              <h4>Delete Product</h4>
+                              <form>
+                                   <input type="text" id="proId2" placeholder="Product Id"><br>
+                              </form>
+                              <button onclick="deletePro()">delete</button>
+                         </div>
+
+                    </div>
+                    <!-- =============== -->
+               </div>
+
+
+
+               <!-- right side block end -->
+
+               <div id="display">
+
+               </div>
+
+          </div>
+
+
+
+
+     </div>
+
+
+</body>
+
+</html>
+<script src="/product.js"></script>

@@ -7,7 +7,7 @@ import com.masai.model.Product;
 
 public interface ProductService {
 
-	public Product addProduct(Product product);
+	public Product addProduct(Product product, Integer categoryId);
 	
 	public List<Product> getAllProd()throws ProductException;
 	
