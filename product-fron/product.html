@@ -8,9 +8,16 @@
      <title>Product</title>
      <link rel="stylesheet" href="style.css">
      <style>
+          * {
+               padding: 0;
+               margin: 0;
+          }
+
+          /* right */
           #right {
                width: 90%;
                margin: auto;
+               margin-top: 10px;
                display: flex;
                justify-content: space-between;
           }
@@ -25,6 +32,16 @@
                box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
           }
 
+          #right > div > h4{
+            margin-bottom: 20px;
+        }
+
+        #right > div > div > h4{
+            margin-bottom: 20px;
+        }
+        #right > div > div button{
+          margin-bottom: 20px;
+        }
           input {
                margin-bottom: 10px;
                width: 100%;
@@ -33,16 +50,25 @@
                border-radius: 5px;
           }
 
+                               
           button {
-               width: 100%;
-               border: 1px solid rgb(232, 228, 228);
-               padding: 5px;
-               border-radius: 5px;
+            width: 100%;
+            border: none;
+            background-image: linear-gradient(to right, #36D1DC 0%, #5B86E5  51%, #36D1DC  100%);
+            padding: 5px;
+            text-align: center;
+            text-transform: uppercase;
+            transition: 0.5s;
+            background-size: 200% auto;
+            color: white;            
+            box-shadow: 0 0 20px #eee;
+            border-radius: 5px;
           }
 
-          button:hover {
-               background-color: aliceblue;
-               cursor: pointer;
+         button:hover {
+            background-position: right center; /* change the direction of the change here */
+            color: #fff;
+            text-decoration: none;
           }
 
           #display {
@@ -87,10 +113,48 @@
           img {
                max-width: 150px;
           }
+
+          nav{
+               display: flex;
+               justify-content: space-between;
+               background-color: #36D1DC ;
+               box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+               width: 100%;
+               height: 50px;
+          }
+          #navbar{
+               width: 90%;
+               margin: auto;
+               display: flex;
+               justify-content: space-around;
+               align-items: center;
+          }
+
+          #navbar > div > a{
+               text-decoration: none;
+               font-size: 18px;
+               font-weight: 600;
+               color: #fff;
+          }
+          
+   
      </style>
 </head>
 
 <body>
+
+     <nav>
+          <div id="navbar">
+               <div><a href="/customer.html">Home</a></div>
+               <div><a href="/product.html">Product Add</a></div>
+               <div><a href="category.html">Category</a></div>
+
+          </div>
+     </nav>
+
+
+
+     <!-- ================== -->
 
      <div class="flex-page">
           <!-- right side block start -->

@@ -1,0 +1,115 @@
+* {
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box; 
+ }
+ 
+ #display{
+     /* height: 70px; */
+     margin-top: 10px;
+ }
+ 
+
+
+ #parent{
+     width: 95%;
+     margin: auto;
+     display: grid;
+     grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+     gap: 40px;
+     margin-bottom: 30px;
+   }
+   #parent>div{
+     box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+     padding: 20px 30px;
+     border-radius: 5px;
+   }
+   #parent>div:hover{
+     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+   }
+   .image{
+     max-width: 100px;
+   }
+
+   #totalp{
+     padding: 20px 40px;
+     line-height: 30px;
+   }
+   .clc{
+     margin-left: 40px;
+     margin-top: 10px;
+   }
+ 
+   .butn{
+     padding: 0 5px;
+     margin: 0 9px;
+   }
+
+
+
+   nav{
+    display: flex;
+    justify-content: space-between;
+    background-color: #36D1DC ;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    width: 100%;
+    height: 50px;
+}
+#navbar{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#navbar > div > a{
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+}
+
+
+/* -----------------------------------media query for nav bar--------------------------------- */
+/* -----------------------------------media query for nav bar--------------------------------- */
+@media (max-width: 878px) {
+.menu-button-container {
+ display: flex;
+}
+.menu {
+ position: absolute;
+ top: 0;
+ margin-top: 50px;
+ left: 0;
+ flex-direction: column;
+ width: 100%;
+ justify-content: center;
+ align-items: center;
+}
+#menu-toggle ~ .menu li {
+ height: 0;
+ margin: 0;
+ padding: 0;
+ border: 0;
+ transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+#menu-toggle:checked ~ .menu li {
+ height: 2.5em;
+ padding: 0.5em;
+ transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+}
+.menu > li {
+ display: flex;
+ justify-content: center;
+ margin: 0;
+ padding: 0.5em 0;
+ width: 100%;
+ color: black;
+ background-color: #fff;
+}
+}
+
+
+
+
