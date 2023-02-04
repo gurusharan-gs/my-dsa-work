@@ -12,6 +12,7 @@ public class FindThreePairSum {
 				for(int k=j+1; k<n; k++) {
 					if(arr[i] + arr[j] + arr[k] == target) {
 						count++;
+//						return i+""+ j+""+ k;
 					}
 				}
 			}
@@ -23,7 +24,7 @@ public class FindThreePairSum {
      public static void main(String[] args) {
 		
 		int[] arr = {4, 2, 5, 2, 1, 6, 8, 7};
-		int target = 12;
+		int target = 15;
 		int x = findThreePairSum(arr, target);
 		System.out.println(x);
 		
