@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.masai.model.Msql;
+import com.masai.model.dto.MsqlDto;
 import com.masai.model.service.MsqlService;
 
 
@@ -26,8 +27,18 @@ public class SqlController {
 		return new ResponseEntity<Msql>(sService.addQuery(sql), HttpStatus.CREATED);
 	}
 	
-	@GetMapping("/query/{name}")
-	public ResponseEntity<List<String>> getQueryByName(@PathVariable("name") String name) {
-		return new ResponseEntity<List<String>>(sService.findByNameLike(name), HttpStatus.CREATED);	
+//	@GetMapping("/query/{name}")
+//	public ResponseEntity<List<String>> getQueryByName(@PathVariable("name") String name) {
+//		return new ResponseEntity<List<String>>(sService.findByNameLike(name), HttpStatus.OK);	
+//	}
+	
+	@GetMapping("/query/byName/{name}")
+	public ResponseEntity<List<MsqlDto>> getQueryByName1(@PathVariable("name") String name) {
+		return new ResponseEntity<List<MsqlDto>>(sService.findByNameLike1(name), HttpStatus.OK);	
+	}
+	
+	@GetMapping("/query/list")
+	public ResponseEntity<List<Msql>> getList() {
+		return new ResponseEntity<List<Msql>>(sService.getAll(), HttpStatus.OK);	
 	}
 }
