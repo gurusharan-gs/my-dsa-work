@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>my sql database</title>
+
+     <style>
+          table {
+               width: 90%;
+               margin: auto;
+               /* text-align: center; */
+               background-color: white;
+               border-radius: 5px;
+               box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+               padding: 5px;
+          }
+
+          tr {
+               font-size: 25px;
+               padding: 5px;
+               margin: 0px 520px;
+          }
+
+          td {
+               padding: 12px;
+               margin: 0px 120px;
+          }
+
+          #display {
+               width: 90%;
+               margin: auto;
+            
+
+          }
+
+          .querys > div{
+               /* font-size: 30px; */
+                  display: flex;
+                  align-items: center;
+               /* justify-content: ; */
+               text-align: left;
+          }
+     </style>
+</head>
+
+<body>
+
+     <div>
+          <h4>Add Query</h4>
+          <form>
+               <!-- <input type="text" id="id" placeholder="category ID"><br> -->
+               <input type="text" id="name" placeholder="query name"><br>
+               <input type="text" id="query" placeholder="query"><br>
+          </form>
+          <button onclick="addQuery()">add product</button>
+     </div>
+
+     <div>
+          <h4>find by name Query</h4>
+          <form>
+               <!-- <input type="text" id="id" placeholder="category ID"><br> -->
+               <input type="text" id="names" placeholder="query name"><br>
+          </form>
+          <button onclick="viewQueryByName()">find product</button>
+     </div>
+
+     <button onclick="viewAllQuery()">All Query</button>
+
+
+     <div id="display"></div>
+</body>
+
+</html>
+<script>
+
+
+     async function addQuery() {
+          let pro_data = {
+               name: document.getElementById("name").value,
+               query: document.getElementById("query").value,
+          }
+          pro_data = JSON.stringify(pro_data)
+          let api_link = `http://localhost:8888/query/add`
+          let response = await fetch(api_link, {
+               method: "POST",
+               body: pro_data,
+               headers: {
+                    'Content-Type': 'application/json'
+               }
+          })
+          let data = await response.json()
+          if (data.message != null) {
+               alert(data.message);
+          }
+          else {
+               //     displayData1(data)
+               console.log(data);
+          }
+     }
+
+
+
+     async function viewQueryByName() {
+          let key = document.getElementById("names").value;
+          console.log(key + " hello")
+          fetch(`http://localhost:8888/query/byName/${key}`)
+               .then((response) => response.json())
+               .then((data) => displayData2(data));
+
+     }
+
+
+
+
+
+     async function viewAllQuery() {
+          fetch('http://localhost:8888/query/list')
+               .then((response) => response.json())
+               .then((data) => displayData2(data));
+
+     }
+
+
+
+     function displayData2(data){
+
+     let cont=document.getElementById("display")
+     cont.innerHTML=null;
+
+     let table=document.createElement("table");
+     let p=document.createElement("h1");
+     p.setAttribute("class","proCat")
+     p.innerText="Products"
+
+     let thead=document.createElement("thead");
+
+     let tr1=document.createElement("tr");
+
+     let th1=document.createElement("th");
+     th1.innerText="Name"
+
+     let th2=document.createElement("th");
+     th2.innerText="Query"
+
+
+     tr1.append(th1,th2);
+     thead.append(tr1);
+
+     let tbody=document.createElement("tbody");
+     tbody.setAttribute("id","tab1")
+     table.append(thead,tbody)
+     cont.append(p,table);
+
+     data.forEach(function(ele){
+         let tr=document.createElement("tr")
+         let td1=document.createElement("td")
+         td1.innerText=ele.name;
+
+         let td2=document.createElement("td")
+         td2.innerText=ele.query;
+
+         tr.append(td1,td2)
+         document.getElementById("tab1").append(tr)
+
+     });
+          }
+
+
+     // function displayData2(data) {
+     //      let cont = document.getElementById("display")
+     //      cont.innerHTML = null;
+
+     //      data.forEach(function (ele) {
+
+     //           let tr = document.createElement("div")
+     //           tr.setAttribute("class", "querys")
+
+     //           let div = document.createElement("div")
+     //           let td1 = document.createElement("h2")
+     //           td1.innerText = ele.name;
+
+     //           let td2 = document.createElement("p")
+     //           td2.innerText = ele.query;
+
+     //           div.append(td1, td2)
+     //           tr.append(div)
+     //           cont.append(tr)
+     //      });
+
+     // }
+
+</script>
