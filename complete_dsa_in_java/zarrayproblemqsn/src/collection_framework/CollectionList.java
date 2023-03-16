@@ -2,6 +2,9 @@ package collection_framework;
 
 import java.util.ArrayList;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class CollectionList {
 	
 	public static void main(String[] args) {
@@ -44,7 +47,7 @@ public class CollectionList {
 		
 //		returns the element present in the specified index
 //		System.out.println(names.get(0));
-//		System.out.println(names.get(1));
+
 		
 //		checks if the element is present in the arraylist
 //		System.out.println(names.contains("Sagar"));
@@ -84,6 +87,12 @@ public class CollectionList {
 //		list.add(123);
 //		list.add(true);
 //		list.add(44.25);
+//		System.out.println(list);
+		
+		
+		List<Integer> list = Arrays.asList(1,2,3,4,5,6,8);
+		list.forEach(a -> System.out.print(a));
+		
 //		System.out.println(list);
 		
 		
