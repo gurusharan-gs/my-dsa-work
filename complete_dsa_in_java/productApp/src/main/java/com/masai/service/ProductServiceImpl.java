@@ -35,10 +35,15 @@ public class ProductServiceImpl implements ProductService {
 	public Product addProduct(Product product, Integer categoryId) {
 
 		Optional<Category> opt = cDao.findById(categoryId);
+		
 		if(opt.isPresent()) {
+			
 			Category category = opt.get();
+			
 			category.getProducts().add(product);
+			
 			product.setCategory(category);
+			
 			Product savePrd = pDao.save(product);
 			return savePrd;
 		}else {
