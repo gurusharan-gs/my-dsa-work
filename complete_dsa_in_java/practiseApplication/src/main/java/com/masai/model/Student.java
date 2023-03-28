@@ -23,6 +23,15 @@ public class Student {
 	private String addr;
 	private Integer marks;
 	
+//	public Student() {
+//		super();
+//		// TODO Auto-generated constructor stub
+//	}
+	
+
+	
+	
+	
 	
 
 }
