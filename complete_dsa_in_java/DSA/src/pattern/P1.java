@@ -57,6 +57,8 @@ public class P1 {
 
 	public static void main(String[] args) {
 
+		pattern2(4);
+		pattern1(4);
 		pattern3(4);
 		System.out.println("-------------------------------");
 		pattern4(4);
